@@ -1,0 +1,23 @@
+{
+  "name": "short-url",
+  "version": "1.0.0",
+  "description": "URL shortner",
+  "main": "./lib/index",
+  "repository":{
+    "type":"git",
+    "url":"git://github.com/AnishLushte07/url-shortner.git"
+  },
+  "keywords":["short","url","shortener","tiny","uri","bit.ly"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anish Lushte",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^5.6.11",
+    "shortid": "^2.2.14"
+  },
+  "bugs": {
+    "url": "https://github.com/AnishLushte07/url-shortner/issues"
+  }
+}

@@ -1,13 +1,14 @@
-const short = require('./lib/index');
+const URLShortner = require('./lib/index');
 
-short.connect('mongodb://localhost/shortdb');
+const instance = new URLShortner('mongodb://192.168.0.161/shortdb', (err) => console.log(err));
+// short.connect('mongodb://192.168.0.161/shortdb');
 
-short.connection.on('error', (error) => {
+/*instance.connection.on('error', (error) => {
   throw new Error(error);
-});
+});*/
 
 setTimeout(() => {
-  short.retrieve('OST-0UaWi')
+  instance.retrieve('001e')
     .then(res => console.log(res))
     .catch(err => console.log(err));
 }, 2000);

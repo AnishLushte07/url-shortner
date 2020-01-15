@@ -1,0 +1,126 @@
+
+const mongoose = require('mongoose');
+const shortUrl = require('../models/ShortURL');
+const { toBase62 } = require('./base62');
+
+let ShortURLModel;
+let connection = mongoose.connection;
+let digits = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let len = digits.length;
+let temp = 3;
+let hashCount;
+
+module.exports = {
+  connection,
+  connect,
+  generate,
+  retrieve,
+  shortenUrl,
+};
+
+function connect(mongodb, options = {}) {
+  if (!mongodb) throw new Error('Mongo URL not specified');
+
+  const { characters, minHashCount, expiryDays } = options;
+
+  if (characters) {
+    digits = options.characters;
+    len = digits.length;
+  }
+
+  hashCount = minHashCount || 4;
+
+  ShortURLModel = shortUrl({ expiryDays: expiryDays || 60 });
+
+  if (mongoose.connection.readyState === 0) {
+    mongoose.connect(mongodb, { useNewUrlParser: true });
+  }
+}
+
+function _find(query) {
+  return new Promise((resolve, reject) => {
+    ShortURLModel.findOne(query, '_id URL', (err, result) => {
+      if (err) return reject(err);
+
+      return resolve(result);
+    });
+  });
+}
+
+function _increamentHits(id) {
+  ShortURLModel.updateOne({ _id: id }, { $inc: { hits: 1 } }, (err) => {
+    if (err) console.log(err);
+  });
+}
+
+async function shortenUrl(URL, expiry) {
+  if (!URL || typeof URL !== 'string') {
+    return Promise.reject({ message: 'Please specify URL to be shortened' });
+  }
+
+  let hash = toBase62(temp++, digits, len);
+  const url = `http://short.test/${hash}`;
+
+  if (hash.length < hashCount) {
+    hash = hash.padStart(hashCount, '0');
+  }
+
+  const record = new ShortURLModel({ URL, _id: hash,  expires_at: expiry });
+
+  return new Promise((resolve, reject) => {
+    record.save(function (err, result) {
+      if (err) return reject(err);
+
+      return resolve({ url });
+    });
+  });
+}
+
+async function generate(URL) {
+  try {
+    if (!URL || typeof URL !== 'string') {
+      return Promise.reject({ message: 'Please specify URL to be shortened' });
+    }
+
+    const exists = await _find({ URL });
+
+    if (exists) {
+      return Promise.resolve({ hash: exists._id });
+    }
+
+    const record = new ShortURLModel({ URL });
+
+    return new Promise((resolve, reject) => {
+      record.save(function (err, result) {
+        if (err) return reject(err);
+
+        return resolve({ hash: result._id });
+      });
+    });
+  } catch (err) {
+    return Promise.reject(err);
+  }
+}
+
+async function retrieve(hash) {
+  try {
+    const _id = hash.trim();
+
+    if (!hash) {
+      return Promise.reject({ message: 'Please specify hash value.' });
+    }
+
+    const result = await _find({ _id });
+
+    if (!result) {
+      return Promise.reject({ message: 'No record found.' });
+    }
+
+    if (result) {
+      _increamentHits(result._id);
+      return Promise.resolve(result);
+    }
+  } catch (err) {
+    return Promise.reject(err);
+  }
+}

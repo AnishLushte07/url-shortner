@@ -10,12 +10,6 @@ const options = {
   versionKey : false
 };
 
-function addDays(date, days) {
-  const result = new Date(date);
-  result.setDate(result.getDate() + days);
-  return result;
-}
-
 module.exports = function (opt = {}) {
   const ShortURLSchema = new Schema({
     _id        : { type : String, unique: true },

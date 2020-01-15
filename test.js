@@ -8,7 +8,7 @@ const instance = new URLShortner('mongodb://192.168.0.161/shortdb', (err) => con
 });*/
 
 setTimeout(() => {
-  instance.retrieve('001e')
-    .then(res => console.log(res))
+  instance.shortenUrl('https://asdfasdf.sadf.asdf/asdf/sadf')
+    .then(res => console.log('res' , res))
     .catch(err => console.log(err));
 }, 2000);

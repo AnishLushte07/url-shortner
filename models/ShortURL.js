@@ -3,7 +3,6 @@
  */
 
 const mongoose = require('mongoose');
-const shortid = require('shortid');
 
 const Schema = mongoose.Schema;
 
@@ -11,12 +10,20 @@ const options = {
   versionKey : false
 };
 
-const ShortURLSchema = new Schema({
-  _id        : { type : String, default: shortid.generate },
-  URL        : { type : String, unique: false },
-  hits       : { type : Number, default: 0 },
-  data       : { type : Schema.Types.Mixed },
-  created_at : { type : Date, default: Date.now },
-}, options);
+function addDays(date, days) {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
 
-exports.ShortURL = mongoose.model('ShortURL', ShortURLSchema);
+module.exports = function (opt = {}) {
+  const ShortURLSchema = new Schema({
+    _id        : { type : String, unique: true },
+    URL        : { type : String, unique: false },
+    hits       : { type : Number, default: 0 },
+    created_at : { type : Date, default: Date.now },
+    expires_at : { type : Date, default: Date.now },
+  }, options);
+
+  return mongoose.model('ShortURL', ShortURLSchema);
+};

@@ -1,13 +1,20 @@
 {
   "name": "short-url",
   "version": "1.0.0",
-  "description": "URL shortner",
+  "description": "URL shortener",
   "main": "./lib/index",
-  "repository":{
-    "type":"git",
-    "url":"git://github.com/AnishLushte07/url-shortner.git"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AnishLushte07/url-shortner.git"
   },
-  "keywords":["short","url","shortener","tiny","uri","bit.ly"],
+  "keywords": [
+    "short",
+    "url",
+    "shortener",
+    "tiny",
+    "uri",
+    "bit.ly"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

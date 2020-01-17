@@ -26,16 +26,15 @@ To install the latest version on npm locally and save it in your package's
  
   const options = {
       characters: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-      minHashCount: "4",
-      domain: "click.com"
+      minHashCount: 4,
+      domain: "https://click.com"
   }
+
   const shortUrl = new URLShortener(mongodb, errorCallback, options);
 ```
 
 + Shorten URL
 ```javascript
-  const shortUrl = new URLShortner('mongodb://192.168.0.161/shortdb', (err) => console.log(err), { domain: 'https:click.com' });
- 
   shortUrl.shortenUrl('https://client.example.com/user/1', new Date("2025-02-01"))
       .then(res => console.log('res' , res))
       .catch(err => console.log(err));
@@ -43,10 +42,8 @@ To install the latest version on npm locally and save it in your package's
 
 + Retrieve Long URL from hash
 ```javascript
-  const shortUrl = new URLShortner('mongodb://192.168.0.161/shortdb', (err) => console.log(err), { domain: 'https:click.com' });
- 
   shortUrl.retrieve('0004')
-   .then(res => console.log('res' , res))
+   .then(orgUrl => redirect(orgUrl.URL))
    .catch(err => console.log(err));
 ```
 

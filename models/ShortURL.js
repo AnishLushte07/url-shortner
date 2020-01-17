@@ -10,7 +10,7 @@ const options = {
   versionKey : false,
 };
 
-module.exports = function () {
+module.exports = function() {
   const ShortURLSchema = new Schema({
     _id        : { type : String },
     URL        : { type : String },

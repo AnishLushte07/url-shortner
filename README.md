@@ -22,7 +22,7 @@ To install the latest version on npm locally and save it in your package's
 ## Usage
 + Initialize URL Shortener Object
 ```javascript
-  const URLShortener = require('node-short-url');
+  const URLShortener = require('node-url-shorten');
  
   const options = {
       characters: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",

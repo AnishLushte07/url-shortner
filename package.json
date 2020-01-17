@@ -1,7 +1,7 @@
 {
-  "name": "short-url",
+  "name": "node-url-shorten",
   "version": "1.0.1",
-  "description": "URL shortener",
+  "description": "URL shortener using base62 technique.",
   "main": "./lib/index",
   "repository": {
     "type": "git",

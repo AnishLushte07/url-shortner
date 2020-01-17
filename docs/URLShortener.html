@@ -19,7 +19,7 @@
 
     <h1 class="page-title">Class: URLShortener</h1>
 
-    
+
 
 
 
@@ -27,24 +27,24 @@
 <section>
 
 <header>
-    
+
         <h2><span class="attribs"><span class="type-signature"></span></span>URLShortener<span class="signature">(mongodb, error, url)</span><span class="type-signature"></span></h2>
-        
-    
+
+
 </header>
 
 <article>
     <div class="container-overview">
-    
-        
 
-    
 
-    
+
+
+
+
     <h4 class="name" id="URLShortener"><span class="type-signature"></span>new URLShortener<span class="signature">(mongodb, error, url)</span><span class="type-signature"></span></h4>
-    
 
-    
+
+
 
 
 
@@ -62,96 +62,96 @@ Initialize URL Shortener Object
 
 
     <h5>Parameters:</h5>
-    
+
 
 <table class="params">
     <thead>
     <tr>
-        
+
         <th>Name</th>
-        
+
 
         <th>Type</th>
 
-        
 
-        
+
+
 
         <th class="last">Description</th>
     </tr>
     </thead>
 
     <tbody>
-    
+
 
         <tr>
-            
+
                 <td class="name"><code>mongodb</code></td>
-            
+
 
             <td class="type">
-            
-                
+
+
 <span class="param-type">object</span>
 
 
-            
+
             </td>
 
-            
 
-            
+
+
 
             <td class="description last">connection url</td>
         </tr>
 
-    
+
 
         <tr>
-            
+
                 <td class="name"><code>error</code></td>
-            
+
 
             <td class="type">
-            
-                
+
+
 <span class="param-type">function</span>
 
 
-            
+
             </td>
 
-            
 
-            
+
+
 
             <td class="description last">callback</td>
         </tr>
 
-    
+
 
         <tr>
-            
+
                 <td class="name"><code>url</code></td>
-            
+
 
             <td class="type">
-            
-                
+
+
 <span class="param-type">object</span>
 
 
-            
+
             </td>
 
-            
 
-            
+
+
 
             <td class="description last">shortener configuration object</td>
         </tr>
 
-    
+
     </tbody>
 </table>
 
@@ -162,42 +162,42 @@ Initialize URL Shortener Object
 
 <dl class="details">
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="short.js.html">short.js</a>, <a href="short.js.html#line33">line 33</a>
     </li></ul></dd>
-    
 
-    
 
-    
 
-    
+
+
+
+
 </dl>
 
 
@@ -219,8 +219,8 @@ Initialize URL Shortener Object
 
 
     <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>const URLShortener = require('node-short-url');
+
+    <pre class="prettyprint"><code>const URLShortener = require('node-url-shorten');
 
 const options = {
     characters: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -231,36 +231,36 @@ const shortUrl = new URLShortener(mongodb, errorCallback, options);</code></pre>
 
 
 
-    
+
     </div>
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+
         <h3 class="subsection-title">Methods</h3>
 
-        
-            
 
-    
 
-    
+
+
+
+
     <h4 class="name" id="retrieve"><span class="type-signature"></span>retrieve<span class="signature">(hash)</span><span class="type-signature"> &rarr; {String}</span></h4>
-    
 
-    
+
+
 
 
 
@@ -278,50 +278,50 @@ Retrieve actual url from hash
 
 
     <h5>Parameters:</h5>
-    
+
 
 <table class="params">
     <thead>
     <tr>
-        
+
         <th>Name</th>
-        
+
 
         <th>Type</th>
 
-        
 
-        
+
+
 
         <th class="last">Description</th>
     </tr>
     </thead>
 
     <tbody>
-    
+
 
         <tr>
-            
+
                 <td class="name"><code>hash</code></td>
-            
+
 
             <td class="type">
-            
-                
+
+
 <span class="param-type">String</span>
 
 
-            
+
             </td>
 
-            
 
-            
+
+
 
             <td class="description last">shortened url hash</td>
         </tr>
 
-    
+
     </tbody>
 </table>
 
@@ -332,42 +332,42 @@ Retrieve actual url from hash
 
 <dl class="details">
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="short.js.html">short.js</a>, <a href="short.js.html#line130">line 130</a>
     </li></ul></dd>
-    
 
-    
 
-    
 
-    
+
+
+
+
 </dl>
 
 
@@ -386,7 +386,7 @@ Retrieve actual url from hash
 
 <h5>Returns:</h5>
 
-        
+
 <div class="param-desc">
     returns long url of hash
 </div>
@@ -398,20 +398,20 @@ Retrieve actual url from hash
         Type
     </dt>
     <dd>
-        
+
 <span class="param-type">String</span>
 
 
     </dd>
 </dl>
 
-    
+
 
 
 
 
     <h5>Example</h5>
-    
+
     <pre class="prettyprint"><code>const shortUrl = new URLShortner('mongodb://192.168.0.161/shortdb', (err) => console.log(err), { domain: 'https:click.com' });
 
 shortUrl.retrieve('0004')
@@ -420,16 +420,16 @@ shortUrl.retrieve('0004')
 
 
 
-        
-            
 
-    
 
-    
+
+
+
+
     <h4 class="name" id="shortenUrl"><span class="type-signature"></span>shortenUrl<span class="signature">(url, expiry)</span><span class="type-signature"> &rarr; {object}</span></h4>
-    
 
-    
+
+
 
 
 
@@ -447,73 +447,73 @@ Generates and returns shortURL
 
 
     <h5>Parameters:</h5>
-    
+
 
 <table class="params">
     <thead>
     <tr>
-        
+
         <th>Name</th>
-        
+
 
         <th>Type</th>
 
-        
 
-        
+
+
 
         <th class="last">Description</th>
     </tr>
     </thead>
 
     <tbody>
-    
+
 
         <tr>
-            
+
                 <td class="name"><code>url</code></td>
-            
+
 
             <td class="type">
-            
-                
+
+
 <span class="param-type">String</span>
 
 
-            
+
             </td>
 
-            
 
-            
+
+
 
             <td class="description last">URL to be shortened</td>
         </tr>
 
-    
+
 
         <tr>
-            
+
                 <td class="name"><code>expiry</code></td>
-            
+
 
             <td class="type">
-            
-                
+
+
 <span class="param-type">Date</span>
 
 
-            
+
             </td>
 
-            
 
-            
+
+
 
             <td class="description last">Date when url will expire</td>
         </tr>
 
-    
+
     </tbody>
 </table>
 
@@ -524,42 +524,42 @@ Generates and returns shortURL
 
 <dl class="details">
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="short.js.html">short.js</a>, <a href="short.js.html#line170">line 170</a>
     </li></ul></dd>
-    
 
-    
 
-    
 
-    
+
+
+
+
 </dl>
 
 
@@ -578,7 +578,7 @@ Generates and returns shortURL
 
 <h5>Returns:</h5>
 
-        
+
 <div class="param-desc">
     returns object with shortened url
 </div>
@@ -590,20 +590,20 @@ Generates and returns shortURL
         Type
     </dt>
     <dd>
-        
+
 <span class="param-type">object</span>
 
 
     </dd>
 </dl>
 
-    
+
 
 
 
 
     <h5>Example</h5>
-    
+
     <pre class="prettyprint"><code>const shortUrl = new URLShortner('mongodb://192.168.0.161/shortdb', (err) => console.log(err), { domain: 'https:click.com' });
 
 shortUrl.shortenUrl('https://client.example.com/user/1', new Date("2025-02-01"))
@@ -612,12 +612,12 @@ shortUrl.shortenUrl('https://client.example.com/user/1', new Date("2025-02-01"))
 
 
 
-        
-    
 
-    
 
-    
+
+
+
+
 </article>
 
 </section>

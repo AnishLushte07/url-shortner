@@ -11,10 +11,10 @@ const options = {
 };
 
 module.exports = function () {
-    const RecordIdSchema = new Schema({
+    const CounterSchema = new Schema({
         _id        : { type : Number, default: 0 },
         last_index : { type: Number, default: 0 },
     }, options);
 
-    return mongoose.model('RecordId', RecordIdSchema);
+    return mongoose.model('Counter', CounterSchema);
 };

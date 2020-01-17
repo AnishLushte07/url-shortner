@@ -13,17 +13,27 @@
     "shortener",
     "tiny",
     "uri",
-    "bit.ly"
+    "bit.ly",
+    "tinyurl"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Anish Lushte",
+  "contributors": [
+    {
+      "name": "Darshit Vora",
+      "email": "dvvrocks@gmail.com"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "mongoose": "^5.8.8"
   },
   "bugs": {
     "url": "https://github.com/AnishLushte07/url-shortner/issues"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.3"
   }
 }

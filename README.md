@@ -51,7 +51,7 @@ To install the latest version on npm locally and save it in your package's
 ```
 
 ## Documentation 
-+ Documentation is available at [URL Shortener Docs](https://anishlushte07.github.io/url-shortner/index.html).
++ Documentation is available at [URL Shortener Docs](https://darshitvvora.github.io/url-shortner/index.html).
 
 ## License
 
